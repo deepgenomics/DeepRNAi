@@ -37,6 +37,26 @@ The `target_gene_name` column identifies the intended target of the siRNA, where
 
 Missing values, including unavailable model predictions, are represented as `NaN`.
 
+
+### Environment setup
+
+The `environment.yml` file defines a Conda environment with Python 3.11, the packages required for evaluation (pandas, NumPy, SciPy, Matplotlib, and scikit-learn), and JupyterLab.
+
+From the repository root, create and activate the environment:
+
+```bash
+conda env create -f environment.yml
+conda activate deeprnai-evaluation
+```
+
+Then launch JupyterLab and open the evaluation notebook:
+
+```bash
+jupyter lab
+```
+
+Run the notebook using the `deeprnai-evaluation` environment, with `deeprnai_dataset.csv.gz` in the same directory as the notebook.
+
 ### Loading the data
 
 Pandas can read the compressed CSV directly:
