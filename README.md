@@ -4,13 +4,13 @@ This repository contains the DeepRNAi public dataset, comprising 240 siRNAs acro
 
 ## Repository contents
 
-- **`examples/valuations.ipynb`**: Example notebook showing how to load in the provided dataset and compare the performance of mini-DeepRNAi, mini-DeepRNAi without biological foundation model (BioFM) embeddings, and mini-Random Forest (Figure S5 in the [preprint](https://www.biorxiv.org/content/10.64898/2026.11.12.766311v1))
-- **`data/deeprnai_dataset.csv.gz`**: compressed CSV containing the public training and test data, experimental measurements, and model predictions.
+- **`examples/evaluations.ipynb`**: Example notebook showing how to load in the provided dataset and compare the performance of mini-DeepRNAi, mini-DeepRNAi without biological foundation model (BioFM) embeddings, and mini-Random Forest (Figure S5 in the [preprint](https://www.biorxiv.org/content/10.64898/2026.11.12.766311v1))
+- **`data/deeprnai_dataset.csv.gz`**: Compressed CSV containing the public training and test data, experimental measurements, and model predictions
 - **`environment.yml`**: YAML file to create a conda environment that will work with the example notebook
 
 ## Dataset
 
-Each row represents an siRNA–transcript pair, linking an siRNA to the measured expression change of a readout transcript. Each siRNA therefore appears in multiple rows.
+Each row represents an siRNA-readout gene pair, linking an siRNA to the measured expression change of a readout gene. Each siRNA therefore appears in multiple rows.
 
 The `target_gene_name` column identifies the intended target of the siRNA, whereas `readout_gene_name` identifies the gene whose expression was measured. The `split` column specifies the predefined training or test assignment.
 
@@ -46,7 +46,7 @@ Pandas can read the compressed CSV directly:
 ```python
 import pandas as pd
 
-df = pd.read_csv("deeprnai_dataset.csv.gz")
+df = pd.read_csv("data/deeprnai_dataset.csv.gz")
 
 train_df = df.loc[df["split"] == "train"].copy()
 test_df = df.loc[df["split"] == "test"].copy()
@@ -54,7 +54,7 @@ test_df = df.loc[df["split"] == "test"].copy()
 
 ### Environment setup
 
-An envionment file to create a conda environment that can be used with the notebook has been provided:
+An environment file to create a conda environment that can be used with the notebook has been provided:
 
 ```bash
 conda env create -f environment.yml
@@ -63,10 +63,10 @@ conda activate deeprnai-evaluation
 
 ## Preprint and citation
 
-The DeepRNAi preprint is available on bioxriv: 
+The DeepRNAi preprint is available on bioRxiv: 
 [DeepRNAi: Predicting on- and off-target siRNA activity and establishing a benchmark](https://www.biorxiv.org/content/10.64898/2026.11.12.766311)
 
-If researchers make use of this public dataset, we ask that they cite:
+If you use this public dataset in your research, please cite:
 
 ```
 @article{Masse2026DeepRNAi,
@@ -80,4 +80,5 @@ If researchers make use of this public dataset, we ask that they cite:
 ```
 
 ## License
+
 This dataset is made available under the Creative Commons Attribution 4.0 International Public License.
