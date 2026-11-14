@@ -6,7 +6,7 @@ This repository contains the DeepRNAi public dataset, comprising 240 siRNAs acro
 
 - **`examples/valuations.ipynb`**: Example notebook showing how to load in the provided dataset and compare the performance of mini-DeepRNAi, mini-DeepRNAi without biological foundation model (BioFM) embeddings, and mini-Random Forest (Figure S5 in the [preprint](https://www.biorxiv.org/content/10.64898/2026.11.12.766311v1))
 - **`data/deeprnai_dataset.csv.gz`**: compressed CSV containing the public training and test data, experimental measurements, and model predictions.
-- **environment.yml**: YAML file to create a conda environment that will work with the example notebook
+- **`environment.yml`**: YAML file to create a conda environment that will work with the example notebook
 
 ## Dataset
 
@@ -79,5 +79,5 @@ If researchers make use of this public dataset, we ask that they cite:
 }
 ```
 
-### License
+## License
 This dataset is made available under the Creative Commons Attribution 4.0 International Public License.
